@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8">
+            <h2>Projetos</h2>
+            <p>Bem-vindo à página de projetos do Python Blog. Aqui você encontrará uma lista de projetos que
+                desenvolvemos e contribuímos, todos relacionados à programação em Python.</p>
+            <h3>Projeto A: Web Scraper Python</h3>
+            <p>Este projeto é um Web Scraper desenvolvido em Python utilizando a biblioteca BeautifulSoup.
+                Ele é capaz de extrair informações de páginas web e transformá-las em dados estruturados, o que
+                é muito útil para coletar informações para análise e automação.</p>
+            <p>... (detalhes do projeto continuam) ...</p>
+            <h3>Projeto B: API REST com Flask</h3>
+            <p>Neste projeto, criamos uma API RESTful utilizando o framework Flask. A API permite a criação, leitura,
+                atualização e exclusão de recursos, demonstrando os princípios básicos de desenvolvimento de APIs em
+                Python.</p>
+            <p>... (detalhes do projeto continuam) ...</p>
+            <h3>Projeto C: Aplicativo de Gerenciamento</h3>
+            <p>Desenvolvemos um aplicativo de gerenciamento simples em Python usando uma interface de linha de
+                comando (CLI). O aplicativo permite criar, visualizar e editar tarefas, ajudando os usuários a
+                manterem-se organizados.</p>
+            <p>... (detalhes do projeto continuam) ...</p>
+        </div>
+        <div class="col-md-4">
+            <div class="sidebar">
+                <h4>Outros Links</h4>
+                <ul>
+                    <li><a href="/">Página Inicial</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/sobre">Sobre</a></li>
+                    <li><a href="/cadastro">Cadastre-se</a></li>
+                    <li><a href="/login">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8">
+            <h2>Blog</h2>
+            <div class="blog-post">
+                <h3>Título da Postagem 1</h3>
+                <p class="text-muted">Publicado em 19 de agosto de 2023</p>
+                <p>Este é o conteúdo da primeira postagem do blog. Aqui você pode compartilhar informações,
+                    tutoriais, dicas e novidades sobre programação em Python. Fique ligado para mais atualizações!</p>
+            </div>
+            <div class="blog-post">
+                <h3>Título da Postagem 2</h3>
+                <p class="text-muted">Publicado em 22 de agosto de 2023</p>
+                <p>Na segunda postagem, abordamos uma técnica avançada de manipulação de dados com Pandas. É uma
+                    ótima maneira de aprimorar suas habilidades de análise de dados em Python.</p>
+            </div>
+            <!-- Mais postagens aqui -->
+        </div>
+        <div class="col-md-4">
+            <div class="sidebar">
+                <h4>Categorias</h4>
+                <ul>
+                    <li><a href="#">Tutoriais</a></li>
+                    <li><a href="#">Dicas</a></li>
+                    <li><a href="#">Análise de Dados</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

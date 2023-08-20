@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h2>Cadastro</h2>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-success" role="alert">
+                    {{ message }}
+                </div>
+                {% endfor %}
+            {% endif %}
+            {% endwith %}
+            <form method="post" action="">
+                {{cadastro.csrf_token}}
+                <div class="form-group">
+                    <label for="nome">Nome</label>
+                    {{cadastro.nome(class="form-control", placeholder="Digite aqui seu nome completo")}}
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    {{cadastro.email(class="form-control", placeholder="Digite aqui seu e-mail").lower()}}
+                </div>
+                <div class="form-group">
+                    <label for="telefone">Telefone</label>
+                    {{cadastro.telefone(class="form-control", placeholder="Digite aqui seu telefone")}}
+                </div>
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    {{cadastro.senha(class="form-control", placeholder="Digite aqui sua senha")}}
+                </div>
+                {{cadastro.enviar(type="submit", class="btn btn-primary")}}
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
