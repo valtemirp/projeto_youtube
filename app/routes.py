@@ -1,6 +1,7 @@
-from app import app
-from flask import render_template, flash
+from app import app, db, bcrypt
+from flask import render_template, flash, session
 from app.forms import FormCadastro
+from app.models import TblUsuario
 
 @app.route('/')
 def index():
@@ -27,15 +28,22 @@ def cadastro():
         email = cadastro.email.data
         telefone = cadastro.telefone.data
         senha = cadastro.senha.data
+        senha_hash = bcrypt.generate_password_hash(senha).decode('utf-8')
         flash('Seu cadastro foi realizado com sucesso!')
-        dicionario_cadastro = {
-        'nome': nome,
-        'email': email.lower(),
-        'telefone' : telefone,
-        'senha': senha
-        }
+        novo_usurio = TblUsuario(
+            nome=nome,
+            email = email,
+            telefone = telefone,
+            senha = senha_hash
+            )
+        db.session.add(novo_usurio)
+        db.session.commit()
     return render_template('cadastro.html', titulo = 'Cadastre-se', dicionario_cadastro = dicionario_cadastro, cadastro = cadastro)
 
 @app.route('/login')
 def login():
     return render_template('login.html', titulo = 'Login')
+
+@app.route('/teste')
+def teste():
+    return 'teste'

@@ -9,3 +9,5 @@ class FormCadastro(FlaskForm):
     telefone = TelField('telefone', validators=[DataRequired()])
     senha = PasswordField('senha', validators=[DataRequired()])
     enviar = SubmitField('Enviar')
+
+   
